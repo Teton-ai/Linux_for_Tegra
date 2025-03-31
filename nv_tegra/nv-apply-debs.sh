@@ -220,7 +220,7 @@ elif [ "${DGPU}" == "true" ]; then
 	force_install_deb_list+=("nvidia-l4t-pva")
 else
 	deb_skiplist=()
-    # deb_skiplist+=("nvidia-l4t-graphics-demos")
+    deb_skiplist+=("nvidia-l4t-graphics-demos")
     deb_skiplist+=("nvidia-l4t-jetsonpower-gui-tools")
     deb_skiplist+=("nvidia-l4t-nvpmodel-gui-tools")
 	deb_skiplist+=("nvidia-l4t-dgpu-config")
