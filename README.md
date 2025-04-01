@@ -1,8 +1,9 @@
 - [Linux_for_Tegra](#Linux_for_Tegra)
     - [Supported hardware](#supported-hardware)
     - [Getting Started](#getting-started)
+        - [Flash commands samples](#flash-commands-samples)
     - [Introduction to the software](#introduction-to-the-software)
-        - [Directory structure](directory-structure)
+        - [Directory structure](#directory-structure)
         - [CI/CD](#cicd)
     - [Summary](#summary)
 
@@ -46,6 +47,7 @@ sudo tar xpf Tegra_Linux_Sample-Root-Filesystem_R36.4.0_aarch64.tbz2 -C Linux_fo
 cd Linux_for_Tegra/source/
 ./source_sync.sh -t jetson_36.4
 ```
+
 4. clone this repo and overwrite the original source code
 ```
 cd ../..
@@ -59,11 +61,15 @@ cp -r github/Linux_for_Tegra/* Linux_for_Tegra/
 cd Linux_for_Tegra
 sudo ./apply_binaries.sh
 ```
-make sure system have required libraries (ex: ubuntu-20)
-```
-sudo apt-get update
-sudo apt-get install build-essential flex bison libssl-dev
-```
+* make sure system have required libraries (ex: ubuntu-20)
+   ```
+   sudo apt-get update
+   sudo apt-get install build-essential flex bison libssl-dev
+   ```
+* if You do not have qemu, install it using command
+   ```
+   sudo apt-get install qemu-user-static
+   ```
 
 6. prepare work for kernel build
 ```
@@ -87,12 +93,25 @@ export INSTALL_MOD_PATH=`realpath ../rootfs/`
 ./nvbuild.sh -i
 ```
 
-9. flash the device(take recomputer-orin-j401 for example)
+9. flash the device (take `recomputer-orin-j401` for example)
 ```
 sudo ./tools/kernel_flash/l4t_initrd_flash.sh --external-device nvme0n1p1   -c tools/kernel_flash/flash_l4t_t234_nvme.xml -p "-c bootloader/generic/cfg/flash_t234_qspi.xml"   --showlogs --network usb0 recomputer-orin-j401 internal
 ```
+* make sure you have programs useful for flashing
+    ```
+    sudo apt-get install sshpass
+    sudo apt-get install abootimg
+    sudo apt-get install nfs-kernel-server
+    sudo apt-get install libxml2-utils
+    ```
 
 **Note:** For more flashing methods, please follow our [reComputer Industrial](https://wiki.seeedstudio.com/reComputer_Industrial_Getting_Started/#different-methods-of-flashing) and [reServer Industrial](https://wiki.seeedstudio.com/reServer_Industrial_Getting_Started/#different-methods-of-flashing) wiki documents.
+
+### Flash commands samples
+* For `reComputer Industrial J4012`, using nvme disk as primary storage:
+    ```
+    sudo ./tools/kernel_flash/l4t_initrd_flash.sh --external-device nvme0n1p1   -c tools/kernel_flash/flash_l4t_t234_nvme.xml -p "-c bootloader/generic/cfg/flash_t234_qspi.xml"   --showlogs --network usb0 recomputer-industrial-orin-j201 internal
+    ```
 
 ## Introduction to the software
 
