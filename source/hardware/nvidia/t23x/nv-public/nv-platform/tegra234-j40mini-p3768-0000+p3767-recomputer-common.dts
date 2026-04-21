@@ -204,6 +204,11 @@
 		};
         };
 
+        virtual_therm: virtual-therm {
+                compatible = "teton,virtual-therm";
+                #thermal-sensor-cells = <1>;
+        };
+
         fan1: pwm-fan1 {
 		compatible = "pwm-fan";
 		pwms = <&pwm7 0 45334>;
@@ -212,6 +217,12 @@
         };
 
         thermal-zones {
+                virtual-thermal {
+                        polling-delay-passive = <0>;
+                        polling-delay = <1000>;
+                        thermal-sensors = <&virtual_therm 0>;
+                };
+
                 tj-thermal {
 			trips {
                                 tj_trip_active3: active-3 {
