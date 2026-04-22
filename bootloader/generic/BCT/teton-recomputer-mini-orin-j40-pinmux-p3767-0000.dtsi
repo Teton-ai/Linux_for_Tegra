@@ -32,7 +32,7 @@
 /dts-v1/;
 #include "pinctrl-tegra.h"
 
-#include "./teton-recomputer-mini-orin-j40-pinmux-p3767-0000.dtsi"
+#include "./teton-recomputer-mini-orin-j40-pinmux-p3767-0000-default.dtsi"
 / {
 	pinmux@2430000 {
 		pinctrl-names = "default", "drive", "unused";
