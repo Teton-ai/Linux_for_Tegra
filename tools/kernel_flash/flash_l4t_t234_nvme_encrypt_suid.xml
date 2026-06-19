@@ -153,7 +153,7 @@
             <allocation_attribute> 0x8 </allocation_attribute>
             <align_boundary> 16384 </align_boundary>
             <percent_reserved> 0 </percent_reserved>
-            <unique_guid> APPUUID </unique_guid>
+            <unique_guid> 3724e208-ffa8-413a-88dd-1e8d05dd485f </unique_guid>
             <filename> system_boot.img </filename>
             <description> **Required.** Contains the boot partition. This partition must be defined
               after `primary_GPT` so that it can be accessed as the fixed known special device
@@ -167,7 +167,7 @@
             <allocation_attribute> 0x8 </allocation_attribute>
             <align_boundary> 16384 </align_boundary>
             <percent_reserved> 0 </percent_reserved>
-            <unique_guid> APP_ENC_UUID </unique_guid>
+            <unique_guid> 57d9ba09-a24f-4fae-a1d1-ee7dc474868f </unique_guid>
             <filename> system_root_encrypted.img_ext </filename>
             <description> **Required.** Contains the encrypted root partition("/"). </description>
         </partition>
