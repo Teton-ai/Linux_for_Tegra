@@ -270,6 +270,6 @@
   status = "disabled";
 };
 
-&{/dce&d800000} {
+&{/dce@d800000} {
   status = "disabled";
 };
