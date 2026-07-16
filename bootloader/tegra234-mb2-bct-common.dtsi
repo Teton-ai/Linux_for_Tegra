@@ -13,7 +13,7 @@
 / {
     mb2-misc {
         disable_cpu_l2ecc = <0>;
-        enable_combined_uart = <1>;
+        enable_combined_uart = <0>;
         spe_uart_instance = <2>;
         enable_xusb_fw = <1>;
         enable_uefi_mm = <0>;
