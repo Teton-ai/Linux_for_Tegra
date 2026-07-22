@@ -269,3 +269,7 @@
 &display {
   status = "disabled";
 };
+
+&{/dce@d800000} {
+  status = "disabled";
+};
