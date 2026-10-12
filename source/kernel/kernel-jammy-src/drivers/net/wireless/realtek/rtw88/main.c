@@ -54,9 +54,6 @@ static struct ieee80211_channel rtw_channeltable_2g[] = {
 	{.center_freq = 2452, .hw_value = 9,},
 	{.center_freq = 2457, .hw_value = 10,},
 	{.center_freq = 2462, .hw_value = 11,},
-	{.center_freq = 2467, .hw_value = 12,},
-	{.center_freq = 2472, .hw_value = 13,},
-	{.center_freq = 2484, .hw_value = 14,},
 };
 
 static struct ieee80211_channel rtw_channeltable_5g[] = {
